@@ -2,6 +2,10 @@
 <html>
   <head>
     <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
     <title>Amazona</title>
   </head>
 
@@ -9,6 +13,8 @@
     <div class="grid-container">
       <header class="header">
         <div class="brand">
+          <button onclick="openMenu()">&#9776;</button>
+          <!-- &#9776  this code is for hamburger menu -->
           <a href="index.html">amazona</a>
         </div>
         <div class="header-links">
@@ -16,6 +22,21 @@
           <a href="signin.html">Sign In</a>
         </div>
       </header>
+      <!-- just adding this with out css will go after footer  or add sth here for test-->
+      <aside class="sidebar">
+        <h3>Shopping Categories</h3>
+        <button class="sidebar-close-button" onclick="closeMenu()">x</button>
+        <!-- or we can use font <i class="fa fa-close"></i> -->
+        <ul>
+          <li>
+            <a href="index.html">Pants</a>
+          </li>
+
+          <li>
+            <a href="index.html">Shirts</a>
+          </li>
+        </ul>
+      </aside>
       <main class="main">
         <div class="content">
           <ul class="products">
@@ -89,6 +110,14 @@
         </div>
       </main>
       <footer class="footer">All right reserved.</footer>
-
+    </div>
+    <script>
+      function openMenu() {
+        document.querySelector('.sidebar').classList.add('open');
+      }
+      function closeMenu() {
+        document.querySelector('.sidebar').classList.remove('open');
+      }
+    </script>
   </body>
 </html>
